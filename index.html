@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BELLE — Салон красоты в Тамбове на улице Чичерина</title>
+  <meta name="description" content="Салон красоты BELLE в Тамбове (ул. Чичерина, 17, 1 этаж). Стрижки, окрашивание, маникюр и педикюр в тёплой спа-атмосфере. Ежедневно 09:00–20:00.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-linen: #F6F1EB;
+      --bg-card: #FDFBF8;
+      --bg-chip: #EAE0D5;
+      --text-primary: #2C241E;
+      --text-secondary: #786B61;
+      --accent: #B86B58;
+      --accent-hover: #A45B49;
+      --divider: #E2D8CE;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-linen);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-linen);
+      color: var(--text-primary);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    button, input {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    svg.icon {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 1.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-inline: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 36px;
+      }
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(246, 241, 235, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .header-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-nav {
+      display: none;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .header-nav a {
+      transition: color 0.25s ease;
+    }
+
+    .header-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 820px) {
+      .header-nav {
+        display: flex;
+      }
+    }
+
+    /* Capsule Buttons */
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 26px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: transform 0.3s var(--ease-organic), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .btn-pill:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--bg-card);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--divider);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-header {
+      padding: 9px 18px;
+      font-size: 0.86rem;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+    }
+
+    .btn-header:hover {
+      border-color: var(--accent);
+    }
+
+    .cart-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding-inline: 6px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      color: var(--bg-card);
+      font-size: 0.76rem;
+      font-weight: 500;
+      transition: transform 0.3s var(--ease-organic);
+    }
+
+    .cart-badge.is-empty {
+      background-color: var(--bg-chip);
+      color: var(--text-secondary);
+    }
+
+    /* 1. Hero Section */
+    .hero {
+      padding: 44px 0 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 64px 0 88px;
+      }
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-arch-illustration {
+      width: min(240px, 64vw);
+      aspect-ratio: 4 / 5;
+      border-radius: 160px 160px 20px 20px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      padding: 14px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-arch-illustration svg {
+      width: 100%;
+      height: 100%;
+      border-radius: 146px 146px 14px 14px;
+      display: block;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.05rem, 5vw, 3.45rem);
+      font-weight: 500;
+      line-height: 1.14;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .address-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px 12px;
+      background-color: var(--bg-chip);
+      color: var(--text-primary);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      margin-bottom: 28px;
+    }
+
+    .address-pill span.sep {
+      color: var(--text-secondary);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    /* Section Commons */
+    .section-block {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    @media (min-width: 768px) {
+      .section-block {
+        padding: 84px 0;
+      }
+    }
+
+    .section-head {
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .section-head--centered {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+    }
+
+    /* 2. Interactive 2-Click Selector */
+    .goals-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .goal-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: all 0.28s var(--ease-organic);
+    }
+
+    .goal-pill:hover {
+      border-color: var(--accent);
+    }
+
+    .goal-pill.is-active {
+      background-color: var(--bg-chip);
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+
+    .goal-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--divider);
+      transition: background-color 0.25s ease;
+    }
+
+    .goal-pill.is-active .dot {
+      background-color: var(--accent);
+    }
+
+    .package-spotlight {
+      max-width: 740px;
+      margin: 0 auto;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      border-radius: 36px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      transition: border-color 0.3s ease, opacity 0.3s ease, transform 0.35s var(--ease-organic);
+    }
+
+    @media (min-width: 720px) {
+      .package-spotlight {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 34px 38px;
+        border-radius: 999px;
+      }
+    }
+
+    .package-spotlight.is-highlighted {
+      border-color: var(--accent);
+    }
+
+    .package-info {
+      max-width: 410px;
+    }
+
+    .package-tag {
+      display: inline-block;
+      background-color: var(--bg-chip);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .package-name {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .package-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .package-action {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 720px) {
+      .package-action {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+
+    .package-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .package-price {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .package-duration {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+    }
+
+    /* 3. Horizontal Catalog of Halls */
+    .catalog-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hall-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-pill {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      transition: all 0.25s ease;
+    }
+
+    .filter-pill:hover {
+      color: var(--text-primary);
+      border-color: var(--accent);
+    }
+
+    .filter-pill.is-active {
+      background-color: var(--text-primary);
+      border-color: var(--text-primary);
+      color: var(--bg-card);
+    }
+
+    .scroll-arrows {
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .scroll-arrows {
+        display: flex;
+      }
+    }
+
+    .arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .arrow-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .horizontal-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 12px;
+      padding-inline: 20px;
+      scrollbar-width: none;
+    }
+
+    .horizontal-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .horizontal-track {
+        gap: 26px;
+        padding-inline: max(36px, calc((100vw - 1160px) / 2 + 36px));
+      }
+    }
+
+    .arch-card {
+      flex: 0 0 292px;
+      scroll-snap-align: start;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      border-radius: 160px 160px 20px 20px;
+      padding: 18px 18px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.3s ease, transform 0.35s var(--ease-organic);
+    }
+
+    @media (min-width: 768px) {
+      .arch-card {
+        flex: 0 0 326px;
+        padding: 20px 22px 26px;
+      }
+
+      .arch-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-3px);
+      }
+    }
+
+    .arch-card.is-selected {
+      border-color: var(--accent);
+    }
+
+    .arch-card-visual {
+      width: 100%;
+      height: 176px;
+      border-radius: 144px 144px 14px 14px;
+      background-color: var(--bg-linen);
+      border: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .arch-card-hall {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--bg-chip);
+      color: var(--text-primary);
+      font-size: 0.74rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .arch-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .arch-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .arch-card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .arch-card-footer {
+      border-top: 1px solid var(--divider);
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .arch-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .arch-card-time {
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.84rem;
+    }
+
+    .arch-card-price {
+      font-weight: 500;
+      font-size: 1.08rem;
+    }
+
+    .btn-card {
+      width: 100%;
+      padding: 11px 18px;
+      font-size: 0.88rem;
+    }
+
+    .btn-card.is-added {
+      background-color: var(--bg-chip);
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+
+    /* 4. Slide-over Booking Drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background-color: rgba(44, 36, 30, 0.34);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.32s ease, visibility 0.32s ease;
+    }
+
+    .drawer-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .booking-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      width: min(100vw, 450px);
+      background-color: var(--bg-card);
+      border-left: 1px solid var(--divider);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.4s var(--ease-organic);
+    }
+
+    @media (min-width: 520px) {
+      .booking-drawer {
+        border-radius: 32px 0 0 32px;
+      }
+    }
+
+    .booking-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .drawer-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 600;
+    }
+
+    .drawer-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background-color: var(--bg-linen);
+      border: 1px solid var(--divider);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.25s ease;
+    }
+
+    .drawer-close:hover {
+      border-color: var(--accent);
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .drawer-section-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .selected-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .selected-item {
+      background-color: var(--bg-linen);
+      border: 1px solid var(--divider);
+      border-radius: 20px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .selected-item-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .selected-item-meta {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .remove-item-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .remove-item-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .empty-selection {
+      background-color: var(--bg-linen);
+      border: 1px dashed var(--divider);
+      border-radius: 24px;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .empty-selection button {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .chip-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .chip-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .time-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .slot-pill {
+      padding: 9px 15px;
+      border-radius: 999px;
+      background-color: var(--bg-linen);
+      border: 1px solid var(--divider);
+      font-size: 0.84rem;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .slot-pill:hover {
+      border-color: var(--accent);
+    }
+
+    .slot-pill.is-active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-card);
+    }
+
+    .name-input {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background-color: var(--bg-linen);
+      border: 1px solid var(--divider);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+
+    .name-input::placeholder {
+      color: var(--text-secondary);
+    }
+
+    .name-input:focus {
+      border-color: var(--accent);
+    }
+
+    .drawer-footer {
+      padding: 18px 24px calc(18px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--divider);
+      background-color: var(--bg-card);
+    }
+
+    .drawer-summary {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+    }
+
+    .drawer-summary-total {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      padding: 15px 24px;
+      font-size: 0.95rem;
+    }
+
+    .drawer-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+    }
+
+    /* 5. Calm Contact Footer */
+    .site-footer {
+      padding: 64px 0 48px;
+    }
+
+    .footer-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    @media (min-width: 860px) {
+      .footer-layout {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+      }
+    }
+
+    .footer-details {
+      max-width: 440px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+    }
+
+    .footer-phone {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      transition: color 0.25s ease;
+    }
+
+    .footer-phone:hover {
+      color: var(--accent);
+    }
+
+    .footer-address {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .footer-hours {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .footer-map-card {
+      width: 100%;
+      max-width: 500px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--divider);
+      border-radius: 160px 160px 24px 24px;
+      padding: 16px;
+    }
+
+    .footer-map-card svg {
+      width: 100%;
+      height: auto;
+      border-radius: 146px 146px 16px 16px;
+      display: block;
+    }
+
+    .footer-bottom {
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid var(--divider);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo" aria-label="BELLE">BELLE</a>
+      <nav class="header-nav" aria-label="Навигация">
+        <a href="#selector">Подбор комплекса</a>
+        <a href="#catalog">Залы и услуги</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button type="button" class="btn-pill btn-header" id="openDrawerHeader">
+        <span>Запись</span>
+        <span class="cart-badge is-empty" id="headerCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-arch-illustration" aria-hidden="true">
+          <svg viewBox="0 0 260 325" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="260" height="325" fill="#F6F1EB"/>
+            <!-- Soft background arch -->
+            <path d="M38 325V138C38 87.1898 79.1898 46 130 46C180.81 46 222 87.1898 222 138V325H38Z" fill="#EAE0D5"/>
+            <!-- Warm sun circle -->
+            <circle cx="164" cy="116" r="34" fill="#B86B58" fill-opacity="0.22"/>
+            <circle cx="164" cy="116" r="18" fill="#B86B58"/>
+            <!-- Inner architectural line arch -->
+            <path d="M62 325V142C62 104.445 92.4446 74 130 74C167.555 74 198 104.445 198 142V325" stroke="#786B61" stroke-width="1.25"/>
+            <!-- Organic botanical stem & leaves -->
+            <path d="M114 312C116 254 128 198 152 146" stroke="#2C241E" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M122 252C102 246 88 231 86 213C104 214 118 229 122 252Z" fill="#FDFBF8" stroke="#2C241E" stroke-width="1.25" stroke-linejoin="round"/>
+            <path d="M131 212C149 203 166 205 178 216C165 228 147 226 131 212Z" fill="#FDFBF8" stroke="#2C241E" stroke-width="1.25" stroke-linejoin="round"/>
+            <path d="M141 174C125 166 116 151 118 135C133 140 142 155 141 174Z" fill="#FDFBF8" stroke="#2C241E" stroke-width="1.25" stroke-linejoin="round"/>
+            <!-- Pebbles -->
+            <ellipse cx="148" cy="296" rx="34" ry="13" fill="#FDFBF8" stroke="#786B61" stroke-width="1.25"/>
+            <ellipse cx="144" cy="280" rx="20" ry="8" fill="#EAE0D5" stroke="#786B61" stroke-width="1.25"/>
+          </svg>
+        </div>
+
+        <p class="hero-eyebrow">BELLE</p>
+        <h1 class="hero-title">
+          Салон красоты на улице Чичерина — <em>стрижки, окрашивание, маникюр и педикюр</em> в одном пространстве
+        </h1>
+
+        <div class="address-pill">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10Z"/>
+            <circle cx="12" cy="11" r="2.2"/>
+          </svg>
+          <span>Тамбов, ул. Чичерина, 17, 1 этаж</span>
+          <span class="sep">·</span>
+          <span>09:00–20:00</span>
+        </div>
+
+        <div class="hero-actions">
+          <button type="button" class="btn-pill btn-primary" id="openDrawerHero">
+            <span>Подобрать время визита</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14"/>
+              <path d="m13 6 6 6-6 6"/>
+            </svg>
+          </button>
+          <a href="#catalog" class="btn-pill btn-secondary">Смотреть услуги</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 2-Click Interactive Selector -->
+    <section class="section-block" id="selector">
+      <div class="container">
+        <div class="section-head section-head--centered">
+          <h2 class="section-title">Не знаете, <em>с чего начать?</em></h2>
+          <p class="section-subtitle">Выберите задачу визита — мы сразу соберём готовый комплекс с фиксированной ценой.</p>
+        </div>
+
+        <div class="goals-row" role="tablist" aria-label="Цель визита">
+          <button type="button" class="goal-pill is-active" data-goal="hair" role="tab" aria-selected="true">
+            <span class="dot"></span>
+            <span>Обновить стрижку и цвет</span>
+          </button>
+          <button type="button" class="goal-pill" data-goal="nails" role="tab" aria-selected="false">
+            <span class="dot"></span>
+            <span>Сделать маникюр и педикюр</span>
+          </button>
+          <button type="button" class="goal-pill" data-goal="complex" role="tab" aria-selected="false">
+            <span class="dot"></span>
+            <span>Комплексный уход за 2 часа</span>
+          </button>
+        </div>
+
+        <div class="package-spotlight is-highlighted" id="packageCard">
+          <div class="package-info">
+            <span class="package-tag" id="pkgTag">Рекомендованный комплекс</span>
+            <h3 class="package-name" id="pkgTitle">Комплекс «Обновление образа»</h3>
+            <p class="package-desc" id="pkgDesc">Стрижка по форме лица, мягкое безаммиачное тонирование и укладка брашингом.</p>
+          </div>
+          <div class="package-action">
+            <div class="package-meta">
+              <span class="package-duration" id="pkgDuration">2 ч 30 мин</span>
+              <span class="package-price" id="pkgPrice">4 600 ₽</span>
+            </div>
+            <button type="button" class="btn-pill btn-primary" id="bookPackageBtn">
+              <span>Записаться на этот комплекс</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Horizontal Catalog of Halls -->
+    <section class="section-block" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Пространство <em>трёх залов</em></h2>
+          <p class="section-subtitle">Листайте вбок или выберите нужный зал, чтобы добавить процедуры в запись.</p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="hall-filters" role="tablist" aria-label="Фильтр залов">
+            <button type="button" class="filter-pill is-active" data-hall="all">Все залы</button>
+            <button type="button" class="filter-pill" data-hall="hair">Парикмахерский зал</button>
+            <button type="button" class="filter-pill" data-hall="nails">Ногтевой сервис</button>
+            <button type="button" class="filter-pill" data-hall="pedicure">Педикюр</button>
+          </div>
+
+          <div class="scroll-arrows">
+            <button type="button" class="arrow-btn" id="scrollPrev" aria-label="Прокрутить влево">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M19 12H5"/>
+                <path d="m11 18-6-6 6-6"/>
+              </svg>
+            </button>
+            <button type="button" class="arrow-btn" id="scrollNext" aria-label="Прокрутить вправо">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M5 12h14"/>
+                <path d="m13 6 6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizontal-track" id="servicesTrack" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- 5. Calm Contact Footer -->
+  <footer class="site-footer" id="contacts">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-details">
+          <div class="footer-brand">BELLE</div>
+          <a href="tel:+79107532525" class="footer-phone">+7 910 753-25-25</a>
+          <p class="footer-address">г. Тамбов, ул. Чичерина, 17 (1 этаж)</p>
+          <p class="footer-hours">Открыты ежедневно с 09:00 до 20:00</p>
+          <a href="https://yandex.ru/maps/?text=%D0%A2%D0%B0%D0%BC%D0%B1%D0%BE%D0%B2%2C%20%D1%83%D0%BB.%20%D0%A7%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%2C%2017" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
+            <span>Открыть в Яндекс.Картах</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7"/>
+              <path d="M8 7h9v9"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-map-card" aria-label="Схема расположения салона BELLE на ул. Чичерина, 17">
+          <svg viewBox="0 0 460 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="460" height="280" fill="#F6F1EB"/>
+            <!-- Soft park / green zones in warm sand -->
+            <path d="M22 44C66 28 118 42 134 84C148 120 112 152 72 146C34 140 6 88 22 44Z" fill="#EAE0D5"/>
+            <path d="M312 184C348 166 404 176 426 212C444 242 414 268 372 264C332 260 286 202 312 184Z" fill="#EAE0D5"/>
+            <!-- Secondary streets -->
+            <path d="M0 198L460 148" stroke="#FDFBF8" stroke-width="12"/>
+            <path d="M0 198L460 148" stroke="#E2D8CE" stroke-width="1"/>
+            <path d="M132 0L188 280" stroke="#FDFBF8" stroke-width="12"/>
+            <path d="M132 0L188 280" stroke="#E2D8CE" stroke-width="1"/>
+            <path d="M336 0L292 280" stroke="#FDFBF8" stroke-width="10"/>
+            <path d="M336 0L292 280" stroke="#E2D8CE" stroke-width="1"/>
+            <!-- Main Chicherina street -->
+            <path d="M24 88L442 114" stroke="#FDFBF8" stroke-width="18"/>
+            <path d="M24 88L442 114" stroke="#E2D8CE" stroke-width="1.25"/>
+            <!-- Architectural blocks -->
+            <rect x="192" y="54" width="46" height="22" rx="8" fill="#EAE0D5" stroke="#E2D8CE" stroke-width="1"/>
+            <rect x="252" y="122" width="34" height="24" rx="8" fill="#EAE0D5" stroke="#E2D8CE" stroke-width="1"/>
+            <rect x="78" y="160" width="44" height="22" rx="8" fill="#EAE0D5" stroke="#E2D8CE" stroke-width="1"/>
+            <!-- Street labels -->
+            <text x="58" y="80" fill="#786B61" font-family="Plus Jakarta Sans, sans-serif" font-size="11" letter-spacing="0.04em">ул. Чичерина</text>
+            <text x="150" y="246" fill="#786B61" font-family="Plus Jakarta Sans, sans-serif" font-size="10" transform="rotate(-11 150 246)">Северо-Западный р-н</text>
+            <!-- Salon BELLE Pin -->
+            <circle cx="236" cy="101" r="24" fill="#B86B58" fill-opacity="0.18"/>
+            <circle cx="236" cy="101" r="8" fill="#B86B58" stroke="#FDFBF8" stroke-width="2"/>
+            <!-- Pin Tooltip -->
+            <rect x="176" y="122" width="120" height="32" rx="16" fill="#FDFBF8" stroke="#B86B58" stroke-width="1.25"/>
+            <text x="236" y="142" text-anchor="middle" fill="#2C241E" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500">BELLE · Чичерина, 17</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Салон красоты BELLE · Тамбов</span>
+        <span>Стрижки · Окрашивание · Маникюр · Педикюр</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 4. Slide-over Booking Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="booking-drawer" id="bookingDrawer" aria-label="Панель онлайн-записи" aria-hidden="true">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Ваш визит в BELLE</h2>
+      <button type="button" class="drawer-close" id="closeDrawerBtn" aria-label="Закрыть панель записи">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <div>
+        <span class="drawer-section-label">Выбранные процедуры</span>
+        <div class="selected-list" id="selectedList"></div>
+      </div>
+
+      <div>
+        <span class="drawer-section-label">Удобная дата</span>
+        <div class="chip-scroll" id="dateSlots"></div>
+      </div>
+
+      <div>
+        <span class="drawer-section-label">Желаемое время (09:00–20:00)</span>
+        <div class="time-wrap" id="timeSlots"></div>
+      </div>
+
+      <div>
+        <label for="clientName" class="drawer-section-label">Ваше имя (необязательно)</label>
+        <input type="text" id="clientName" class="name-input" placeholder="Например, Анна" autocomplete="given-name">
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-summary">
+        <span id="summaryDuration">Длительность: 0 мин</span>
+        <span class="drawer-summary-total" id="summaryPrice">0 ₽</span>
+      </div>
+      <button type="button" class="btn-pill btn-primary btn-whatsapp" id="sendWhatsappBtn">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>
+        </svg>
+        <span>Отправить заявку в WhatsApp</span>
+      </button>
+      <p class="drawer-note">Откроется чат с администратором на номер +7 910 753-25-25</p>
+    </div>
+  </aside>
+
+  <script>
+    (function () {
+      const WHATSAPP_PHONE = '79107532525';
+
+      const PACKAGES = {
+        hair: {
+          id: 'pkg-hair',
+          title: 'Комплекс «Обновление образа»',
+          desc: 'Стрижка по форме лица, мягкое безаммиачное тонирование и укладка брашингом.',
+          duration: 150,
+          durationLabel: '2 ч 30 мин',
+          price: 4600,
+          hallLabel: 'Комплекс · Парикмахерский зал'
+        },
+        nails: {
+          id: 'pkg-nails',
+          title: 'Комплекс «Безупречные детали»',
+          desc: 'Комбинированный маникюр с выравниванием и смарт-педикюр с однотонным покрытием.',
+          duration: 165,
+          durationLabel: '2 ч 45 мин',
+          price: 3900,
+          hallLabel: 'Комплекс · Ногти и педикюр'
+        },
+        complex: {
+          id: 'pkg-complex',
+          title: 'Ритуал «Тишина и восстановление»',
+          desc: 'Глубокий спа-уход для волос с укладкой и японский эко-маникюр в четыре руки.',
+          duration: 120,
+          durationLabel: '2 ч 00 мин',
+          price: 3400,
+          hallLabel: 'Комплекс · 2 часа'
+        }
+      };
+
+      const SERVICES = [
+        {
+          id: 'srv-1',
+          hall: 'hair',
+          hallName: 'Парикмахерский зал',
+          title: 'Женская стрижка и укладка',
+          desc: 'Деликатная форма с учётом структуры волос, мытьё с массажем и лёгкая укладка.',
+          duration: 60,
+          price: 1800,
+          artType: 'scissors'
+        },
+        {
+          id: 'srv-2',
+          hall: 'hair',
+          hallName: 'Парикмахерский зал',
+          title: 'Окрашивание Airtouch',
+          desc: 'Плавные воздушные переходы оттенка с сохранением качества полотна и тонированием.',
+          duration: 180,
+          price: 5900,
+          artType: 'waves'
+        },
+        {
+          id: 'srv-3',
+          hall: 'hair',
+          hallName: 'Парикмахерский зал',
+          title: 'Тонирование и блеск',
+          desc: 'Обновление цвета безаммиачным составом и питательная липидная маска.',
+          duration: 90,
+          price: 3200,
+          artType: 'botanical'
+        },
+        {
+          id: 'srv-4',
+          hall: 'nails',
+          hallName: 'Ногтевой сервис',
+          title: 'Маникюр с покрытием гель-лак',
+          desc: 'Бережная обработка кутикулы, выравнивание тонкой базой и нюдовый или глубокий оттенок.',
+          duration: 90,
+          price: 1900,
+          artType: 'stones'
+        },
+        {
+          id: 'srv-5',
+          hall: 'nails',
+          hallName: 'Ногтевой сервис',
+          title: 'Японский эко-маникюр',
+          desc: 'Запечатывание ногтевой пластины минеральной пастой и пудрой для природного глянца.',
+          duration: 60,
+          price: 1600,
+          artType: 'botanical'
+        },
+        {
+          id: 'srv-6',
+          hall: 'nails',
+          hallName: 'Ногтевой сервис',
+          title: 'Укрепление гелем',
+          desc: 'Архитектура тонким жёстким гелем для стойкости покрытия без утяжеления.',
+          duration: 105,
+          price: 2300,
+          artType: 'arch'
+        },
+        {
+          id: 'srv-7',
+          hall: 'pedicure',
+          hallName: 'Педикюр',
+          title: 'Смарт-педикюр с покрытием',
+          desc: 'Атравматичная шлифовка стоп дисками, аккуратная обработка пальчиков и гель-лак.',
+          duration: 90,
+          price: 2500,
+          artType: 'waves'
+        },
+        {
+          id: 'srv-8',
+          hall: 'pedicure',
+          hallName: 'Педикюр',
+          title: 'Эстетический уход стоп',
+          desc: 'Гигиенический педикюр без покрытия с увлажняющим крем-воском и лёгким массажем.',
+          duration: 60,
+          price: 1800,
+          artType: 'stones'
+        }
+      ];
+
+      const TIME_SLOTS = ['09:30', '11:00', '12:30', '14:00', '15:30', '17:00', '18:30'];
+
+      // State
+      let activeGoal = 'hair';
+      let activeHall = 'all';
+      let selectedItems = [];
+      let selectedDate = '';
+      let selectedTime = '12:30';
+
+      // DOM Elements
+      const goalPills = document.querySelectorAll('.goal-pill');
+      const pkgTitle = document.getElementById('pkgTitle');
+      const pkgDesc = document.getElementById('pkgDesc');
+      const pkgDuration = document.getElementById('pkgDuration');
+      const pkgPrice = document.getElementById('pkgPrice');
+      const bookPackageBtn = document.getElementById('bookPackageBtn');
+
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const servicesTrack = document.getElementById('servicesTrack');
+      const scrollPrev = document.getElementById('scrollPrev');
+      const scrollNext = document.getElementById('scrollNext');
+
+      const bookingDrawer = document.getElementById('bookingDrawer');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+      const openDrawerHeader = document.getElementById('openDrawerHeader');
+      const openDrawerHero = document.getElementById('openDrawerHero');
+      const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+      const headerCount = document.getElementById('headerCount');
+
+      const selectedList = document.getElementById('selectedList');
+      const dateSlotsEl = document.getElementById('dateSlots');
+      const timeSlotsEl = document.getElementById('timeSlots');
+      const clientNameInput = document.getElementById('clientName');
+      const summaryDuration = document.getElementById('summaryDuration');
+      const summaryPrice = document.getElementById('summaryPrice');
+      const sendWhatsappBtn = document.getElementById('sendWhatsappBtn');
+
+      function formatPrice(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+      }
+
+      function formatDuration(mins) {
+        if (mins === 0) return '0 мин';
+        const h = Math.floor(mins / 60);
+        const m = mins % 60;
+        if (h === 0) return `${m} мин`;
+        if (m === 0) return `${h} ч`;
+        return `${h} ч ${m} мин`;
+      }
+
+      function getServiceArtwork(type) {
+        switch (type) {
+          case 'scissors':
+            return `
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+                <path d="M35 120V64C35 39.1472 55.1472 19 80 19C104.853 19 125 39.1472 125 64V120" stroke="#E2D8CE" stroke-width="1.25"/>
+                <circle cx="80" cy="54" r="18" fill="#B86B58" fill-opacity="0.16"/>
+                <path d="M56 84C72 68 88 54 106 42" stroke="#2C241E" stroke-width="1.25" stroke-linecap="round"/>
+                <path d="M56 46C72 60 88 74 106 86" stroke="#786B61" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>`;
+          case 'waves':
+            return `
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+                <circle cx="80" cy="56" r="24" fill="#EAE0D5"/>
+                <path d="M26 62C46 44 68 44 88 62C108 80 126 76 138 60" stroke="#B86B58" stroke-width="1.25" stroke-linecap="round"/>
+                <path d="M26 76C46 58 68 58 88 76C108 94 126 90 138 74" stroke="#786B61" stroke-width="1.25" stroke-linecap="round"/>
+              </svg>`;
+          case 'stones':
+            return `
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+                <ellipse cx="80" cy="82" rx="38" ry="14" fill="#EAE0D5" stroke="#786B61" stroke-width="1.25"/>
+                <ellipse cx="80" cy="64" rx="25" ry="10" fill="#FDFBF8" stroke="#2C241E" stroke-width="1.25"/>
+                <circle cx="80" cy="46" r="9" fill="#B86B58" fill-opacity="0.28" stroke="#B86B58" stroke-width="1.25"/>
+              </svg>`;
+          case 'arch':
+            return `
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+                <path d="M46 110V56C46 37.2223 61.2223 22 80 22C98.7777 22 114 37.2223 114 56V110" fill="#EAE0D5"/>
+                <path d="M62 110V58C62 48.0589 70.0589 40 80 40C89.9411 40 98 48.0589 98 58V110" stroke="#B86B58" stroke-width="1.25"/>
+              </svg>`;
+          default:
+            return `
+              <svg width="160" height="120" viewBox="0 0 160 120" fill="none">
+                <circle cx="96" cy="48" r="20" fill="#B86B58" fill-opacity="0.18"/>
+                <path d="M68 98C70 72 78 48 94 30" stroke="#2C241E" stroke-width="1.25" stroke-linecap="round"/>
+                <path d="M74 72C60 68 52 58 52 46C64 48 72 58 74 72Z" fill="#FDFBF8" stroke="#786B61" stroke-width="1.25"/>
+                <path d="M82 54C94 48 106 50 114 58C104 66 92 64 82 54Z" fill="#FDFBF8" stroke="#786B61" stroke-width="1.25"/>
+              </svg>`;
+        }
+      }
+
+      // 2-Click Package Selector
+      function updatePackageView(goalKey) {
+        activeGoal = goalKey;
+        const pkg = PACKAGES[goalKey];
+        goalPills.forEach(btn => {
+          const isMatch = btn.dataset.goal === goalKey;
+          btn.classList.toggle('is-active', isMatch);
+          btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+        });
+        pkgTitle.textContent = pkg.title;
+        pkgDesc.textContent = pkg.desc;
+        pkgDuration.textContent = pkg.durationLabel;
+        pkgPrice.textContent = formatPrice(pkg.price);
+      }
+
+      goalPills.forEach(btn => {
+        btn.addEventListener('click', () => updatePackageView(btn.dataset.goal));
+      });
+
+      bookPackageBtn.addEventListener('click', () => {
+        const pkg = PACKAGES[activeGoal];
+        addItemToBooking({
+          id: pkg.id,
+          title: pkg.title,
+          hallName: pkg.hallLabel,
+          duration: pkg.duration,
+          price: pkg.price
+        });
+        openDrawer();
+      });
+
+      // Render Horizontal Services
+      function renderServices() {
+        const filtered = activeHall === 'all'
+          ? SERVICES
+          : SERVICES.filter(item => item.hall === activeHall);
+
+        servicesTrack.innerHTML = filtered.map(service => {
+          const isAdded = selectedItems.some(item => item.id === service.id);
+          return `
+            <article class="arch-card ${isAdded ? 'is-selected' : ''}">
+              <div class="arch-card-visual">
+                ${getServiceArtwork(service.artType)}
+                <span class="arch-card-hall">${service.hallName}</span>
+              </div>
+              <div class="arch-card-body">
+                <h3 class="arch-card-title">${service.title}</h3>
+                <p class="arch-card-desc">${service.desc}</p>
+                <div class="arch-card-footer">
+                  <div class="arch-card-meta">
+                    <span class="arch-card-time">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 7v5l3 2"/>
+                      </svg>
+                      ${formatDuration(service.duration)}
+                    </span>
+                    <span class="arch-card-price">${formatPrice(service.price)}</span>
+                  </div>
+                  <button type="button" class="btn-pill btn-secondary btn-card ${isAdded ? 'is-added' : ''}" data-service-id="${service.id}">
+                    ${isAdded ? 'В записи · Открыть' : 'Выбрать процедуру'}
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          activeHall = pill.dataset.hall;
+          filterPills.forEach(p => p.classList.toggle('is-active', p === pill));
+          renderServices();
+          servicesTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        });
+      });
+
+      servicesTrack.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-service-id]');
+        if (!btn) return;
+        const service = SERVICES.find(s => s.id === btn.dataset.serviceId);
+        if (!service) return;
+        addItemToBooking(service);
+        openDrawer();
+      });
+
+      scrollPrev.addEventListener('click', () => {
+        servicesTrack.scrollBy({ left: -350, behavior: 'smooth' });
+      });
+
+      scrollNext.addEventListener('click', () => {
+        servicesTrack.scrollBy({ left: 350, behavior: 'smooth' });
+      });
+
+      // Booking State & Drawer
+      function addItemToBooking(item) {
+        const exists = selectedItems.some(i => i.id === item.id);
+        if (!exists) {
+          selectedItems.push({
+            id: item.id,
+            title: item.title,
+            hallName: item.hallName,
+            duration: item.duration,
+            price: item.price
+          });
+        }
+        syncBookingUI();
+      }
+
+      function removeItemFromBooking(id) {
+        selectedItems = selectedItems.filter(i => i.id !== id);
+        syncBookingUI();
+      }
+
+      function syncBookingUI() {
+        const count = selectedItems.length;
+        headerCount.textContent = count;
+        headerCount.classList.toggle('is-empty', count === 0);
+
+        if (count === 0) {
+          selectedList.innerHTML = `
+            <div class="empty-selection">
+              <p>Вы пока не выбрали конкретную процедуру. Можно выбрать услугу в каталоге или отправить заявку на консультацию.</p>
+              <button type="button" id="goToCatalogFromDrawer">Перейти к выбору услуг</button>
+            </div>
+          `;
+        } else {
+          selectedList.innerHTML = selectedItems.map(item => `
+            <div class="selected-item">
+              <div>
+                <div class="selected-item-title">${item.title}</div>
+                <div class="selected-item-meta">${formatDuration(item.duration)} · ${formatPrice(item.price)}</div>
+              </div>
+              <button type="button" class="remove-item-btn" data-remove-id="${item.id}" aria-label="Убрать процедуру">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M18 6 6 18"/>
+                  <path d="m6 6 12 12"/>
+                </svg>
+              </button>
+            </div>
+          `).join('');
+        }
+
+        const totalMinutes = selectedItems.reduce((acc, i) => acc + i.duration, 0);
+        const totalCost = selectedItems.reduce((acc, i) => acc + i.price, 0);
+
+        summaryDuration.textContent = `Длительность: ${formatDuration(totalMinutes)}`;
+        summaryPrice.textContent = formatPrice(totalCost);
+
+        renderServices();
+      }
+
+      selectedList.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('[data-remove-id]');
+        if (removeBtn) {
+          removeItemFromBooking(removeBtn.dataset.removeId);
+          return;
+        }
+        if (e.target.id === 'goToCatalogFromDrawer') {
+          closeDrawer();
+          document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+
+      // Dynamic Upcoming Dates
+      function initDateAndTimeSlots() {
+        const weekdays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        const months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+        const today = new Date();
+        const dates = [];
+
+        for (let i = 0; i < 10; i++) {
+          const d = new Date(today);
+          d.setDate(today.getDate() + i);
+          const dayNum = d.getDate();
+          const monthName = months[d.getMonth()];
+          let label = `${weekdays[d.getDay()]}, ${dayNum} ${monthName}`;
+          if (i === 0) label = `Сегодня, ${dayNum} ${monthName}`;
+          if (i === 1) label = `Завтра, ${dayNum} ${monthName}`;
+          dates.push(label);
+        }
+
+        selectedDate = dates[1] || dates[0];
+
+        dateSlotsEl.innerHTML = dates.map(label => `
+          <button type="button" class="slot-pill ${label === selectedDate ? 'is-active' : ''}" data-date="${label}">
+            ${label}
+          </button>
+        `).join('');
+
+        timeSlotsEl.innerHTML = TIME_SLOTS.map(time => `
+          <button type="button" class="slot-pill ${time === selectedTime ? 'is-active' : ''}" data-time="${time}">
+            ${time}
+          </button>
+        `).join('');
+      }
+
+      dateSlotsEl.addEventListener('click', (e) => {
+        const pill = e.target.closest('[data-date]');
+        if (!pill) return;
+        selectedDate = pill.dataset.date;
+        dateSlotsEl.querySelectorAll('.slot-pill').forEach(p => p.classList.toggle('is-active', p === pill));
+      });
+
+      timeSlotsEl.addEventListener('click', (e) => {
+        const pill = e.target.closest('[data-time]');
+        if (!pill) return;
+        selectedTime = pill.dataset.time;
+        timeSlotsEl.querySelectorAll('.slot-pill').forEach(p => p.classList.toggle('is-active', p === pill));
+      });
+
+      function openDrawer() {
+        bookingDrawer.classList.add('is-open');
+        drawerBackdrop.classList.add('is-open');
+        bookingDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        bookingDrawer.classList.remove('is-open');
+        drawerBackdrop.classList.remove('is-open');
+        bookingDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      openDrawerHeader.addEventListener('click', openDrawer);
+      openDrawerHero.addEventListener('click', openDrawer);
+      closeDrawerBtn.addEventListener('click', closeDrawer);
+      drawerBackdrop.addEventListener('click', closeDrawer);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && bookingDrawer.classList.contains('is-open')) {
+          closeDrawer();
+        }
+      });
+
+      // WhatsApp Submission
+      sendWhatsappBtn.addEventListener('click', () => {
+        const clientName = clientNameInput.value.trim();
+        const lines = [
+          'Здравствуйте! Хочу записаться в салон красоты BELLE (Тамбов, ул. Чичерина, 17).'
+        ];
+
+        if (clientName) {
+          lines.push(`Имя: ${clientName}`);
+        }
+
+        if (selectedItems.length > 0) {
+          lines.push('Выбранные процедуры:');
+          selectedItems.forEach((item, idx) => {
+            lines.push(`${idx + 1}. ${item.title} (${formatPrice(item.price)})`);
+          });
+          const totalCost = selectedItems.reduce((acc, i) => acc + i.price, 0);
+          lines.push(`Итого: ${formatPrice(totalCost)}`);
+        } else {
+          lines.push('Процедура: подбор ухода на месте');
+        }
+
+        lines.push(`Дата и время: ${selectedDate}, ${selectedTime}`);
+
+        const message = encodeURIComponent(lines.join('\n'));
+        window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${message}`, '_blank', 'noopener,noreferrer');
+      });
+
+      // Init
+      initDateAndTimeSlots();
+      syncBookingUI();
+    })();
+  </script>
+</body>
+</html>
